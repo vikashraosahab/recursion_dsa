@@ -17,18 +17,21 @@ int main(int argc, char *argv[]) {
   move(number, 'A', 'B', 'C');
   return 0;
 }
+// MOVE FUNCTION METHOD THAT USED FOR MOVE DISK FROM TOWER A,B,C BY USIGN
+// RECURSION
 void move(int n, char source, char destination, char sparse) {
-  if (n == 1)
+  if (n == 1) // BASE CASE
     printf("\nMove %d disk from %c to %c", n, source, destination);
   else {
     move(n - 1, source, sparse, destination);
     printf("\nMove %d disk from %c to %c", n, source, destination);
-    move(1, source, destination, sparse);
+    move(1, source, destination, sparse); // MOVE LAST DISK FROM A TO C
     printf("\nMove 1 disk from %c to %c ", source, destination);
     move(n - 1, sparse, destination, source); // MOVE B TO A
   }
 }
-int valid_input() {
+int valid_input() // VALID_INPUT MEHTOD JUST VALIDATE TAKEN INPUT FROM USER
+{
   int value;
   while (1) {
     if (scanf("%d", &value) != 1) {
