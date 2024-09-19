@@ -1,0 +1,27 @@
+// PROGRAM THAT CACULATE 1 TO N NUMBER OF DIGITIS 
+#include <stdio.h>
+#include <stlib.h>
+#include <ctype.h>
+#include <math.h>
+#include <string.h>
+
+// FUNCTION PROTOTYPE
+void print (int);
+// MAIN FUNCITON OF THE PROGRAM
+int main (int argc, char *argv[])
+{
+  int value;
+  printf ("\nEnter value : ");
+  scanf ("%d",&value);
+  print (value); // CALLING THE RECURSIVE FUNCITON 
+  return 0;
+}
+// FUNCTION DEFINITION 
+void print (int value)
+{
+  if (value == 0)
+       return; // RETURN NOTHING 
+  
+  print (value - 1); // RECURSIVE FUNCTION
+  printf ("%d",value);
+}
