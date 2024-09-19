@@ -19,7 +19,7 @@ int main(int argc, char *argv[]) {
 }
 void move(int n, char source, char destination, char sparse) {
   if (n == 1)
-    printf("\nMove disk from %c to %c", source, destination);
+    printf("\nMove %d disk from %c to %c", n, source, destination);
   else {
     move(n - 1, source, sparse, destination);
     printf("\nMove %d disk from %c to %c", n, source, destination);
